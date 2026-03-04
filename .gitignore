@@ -1,0 +1,26 @@
+# 敏感与本地配置（勿提交）
+token.txt
+proxy_current.json
+proxy_auth.json
+lines_proxy.json
+
+# Go 编译产物
+proxy_manager/proxy_manager.exe
+proxy_manager/*.exe
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.Python
+*.so
+.venv/
+venv/
+env/
+
+# 系统与编辑器
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*~
