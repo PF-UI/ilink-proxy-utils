@@ -27,6 +27,23 @@ proxy/
 
 ---
 
+## Go 配置文件存放路径
+
+Go 代理从**项目根目录**（即 `proxy_manager` 的**父目录**）读取配置，且**必须在 `proxy_manager` 目录下启动**（`cd proxy_manager` 再执行 `go run main.go`），否则会找错目录。
+
+| 配置文件           | 说明 |
+|--------------------|------|
+| `proxy_current.json` | 当前线路与认证（sid、username、password） |
+| `lines.json`         | 线路列表，面板展示与一键切换用 |
+| `lines_proxy.json`   | 各线路上游 proxy 串，Go 转发必读 |
+
+**路径示例**（与 `proxy_manager` 文件夹同级）：
+
+- Windows：`D:\proxy\proxy\proxy_current.json`、`D:\proxy\proxy\lines.json`、`D:\proxy\proxy\lines_proxy.json`
+- 即项目根目录 = 运行时的当前工作目录的父目录（在 `proxy_manager` 下运行时，父目录即为项目根）。
+
+---
+
 ## 依赖
 
 | 环境   | 说明                    |
