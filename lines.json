@@ -1,0 +1,145 @@
+[
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "hk-tidc2",
+    "name": "【VIP】HK专线1(香港)",
+    "line_desc": "机房线路，速度稳定",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "hk-tidc",
+    "name": "【VIP】HK专线2(香港)",
+    "line_desc": "机房线路，速度稳定",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "H-tm9031",
+    "name": "【VIP】HKT家宽(香港)",
+    "line_desc": "香港原生ip，3网高速转发",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "sg-bgp",
+    "name": "【VIP】新加坡机房(亚洲)",
+    "line_desc": "3网高速转发，高带宽",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "kr1",
+    "name": "【VIP】韩国专线(亚洲)",
+    "line_desc": "机房线路，仅供有需要用户使用",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "jp2",
+    "name": "【VIP】东京机房1(亚洲)",
+    "line_desc": "3网高速转发，解锁本地资源",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "H-IR7838",
+    "name": "【VIP】洛杉矶CN2(美国)",
+    "line_desc": "CN2线路，仅供有需要用戶使用",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "H-9q4909",
+    "name": "【VIP】纽约专线(美国)",
+    "line_desc": "西海岸线路，延迟较低",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "us-user1",
+    "name": "【VIP】洛杉矶家宽(美国)",
+    "line_desc": "家宽ip，仅供有需要用户使用",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "jp-idcx",
+    "name": "【VIP】东京专线(亚洲)",
+    "line_desc": "机房专线，速度稳定",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "H-da6021",
+    "name": "【VIP】洛杉矶专线(美国)",
+    "line_desc": "西海岸线路，延迟较低",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "tw-hinet2",
+    "name": "【VIP】台湾家宽2(亚洲)",
+    "line_desc": "台湾HiNet家宽，解锁台湾本地资源",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  },
+  {
+    "vip_level": 1,
+    "active": 1,
+    "line_sn": "H-jy5909",
+    "name": "【VIP】法国专线(欧洲)",
+    "line_desc": "仅供有需要用户使用",
+    "ip": "",
+    "proxy": null,
+    "port": 0,
+    "connect": true
+  }
+]

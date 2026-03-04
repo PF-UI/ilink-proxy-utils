@@ -1,0 +1,15 @@
+{
+  "hk-tidc2": "HTTPS cmb-g2.gamecaches.com:23990;HTTPS cmb-gate.gamecaches.com:23990;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "hk-tidc": "HTTPS cmb-gate.gamecaches.com:23990;HTTPS cmb-g2.gamecaches.com:23990;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "H-tm9031": "HTTPS cmb-gate.gamecaches.com:41228;HTTPS hk-gate.gamecaches.com:41228;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "sg-bgp": "HTTPS cmb-gate.gamecaches.com:25670;HTTPS hk-gate.gamecaches.com:25670;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "kr1": "HTTPS kr1.gamecaches.com:24115;HTTPS cmb-g2.gamecaches.com:24115;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "jp2": "HTTPS cmb-g2.gamecaches.com:25891;HTTPS jp2.gamecaches.com:25891;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "H-IR7838": "HTTPS cmb-gate.gamecaches.com:26165;HTTPS us-cn2.gamecaches.com:26165;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "H-9q4909": "HTTPS cmb-gate.gamecaches.com:13543;HTTPS us2.gamecaches.com:13543;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "us-user1": "HTTPS cmb-g2.gamecaches.com:23133;HTTPS cmb-gate.gamecaches.com:23133;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "jp-idcx": "HTTPS cmb-g2.gamecaches.com:25881;HTTPS cmb-gate.gamecaches.com:25881;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "H-da6021": "HTTPS cmb-gate.gamecaches.com:13443;HTTPS cmb-g2.gamecaches.com:13443;HTTPS cmb-g2.gamecaches.com:23890; DIRECT",
+  "tw-hinet2": "HTTPS cmb-g2.gamecaches.com:42368;HTTPS tw-hinet2.gamecaches.com:42368;HTTPS cmb-gate.gamecaches.com:13443; DIRECT",
+  "H-jy5909": "HTTPS cmb-g2.gamecaches.com:25643;HTTPS fr1.gamecaches.com:25643;HTTPS cmb-gate.gamecaches.com:13443; DIRECT"
+}
