@@ -1,0 +1,25 @@
+# 凭据与环境
+.env
+token.txt
+proxy_current.json
+proxy_auth.json
+
+# iLink 扩展源码（不上传）
+ilink_yuanma/
+
+# Go 编译产物
+proxy_manager/proxy_manager.exe
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
