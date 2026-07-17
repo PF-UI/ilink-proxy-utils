@@ -151,12 +151,22 @@ def cmd_start():
     """启动 Go 代理"""
     step_separator("启动 Go 代理服务器")
 
-    # 检查 Go 环境
-    try:
-        subprocess.run(["go", "version"], capture_output=True, check=True)
-    except (subprocess.CalledProcessError, FileNotFoundError):
-        print("❌ 未找到 Go 环境，请先安装 Go: https://go.dev/dl/")
-        return
+    go_dir = os.path.join(config.SCRIPT_DIR, "proxy_manager")
+    compiled = "--compiled" in sys.argv
+    exe_path = os.path.join(go_dir, "proxy_manager.exe")
+    use_compiled = compiled and os.path.isfile(exe_path)
+
+    # 使用预编译 exe 时无需 Go；否则检查 Go 环境
+    if not use_compiled:
+        try:
+            subprocess.run(["go", "version"], capture_output=True, check=True)
+        except (subprocess.CalledProcessError, FileNotFoundError):
+            if compiled:
+                print(f"❌ 未找到预编译文件 {exe_path}，且本机无 Go 环境")
+                print("   请放置 proxy_manager.exe，或安装 Go: https://go.dev/dl/")
+            else:
+                print("❌ 未找到 Go 环境，请先安装 Go: https://go.dev/dl/")
+            return
 
     # 检查 proxy_current.json
     if not os.path.isfile(config.PROXY_CURRENT_FILE):
@@ -194,18 +204,13 @@ def cmd_start():
     print(f"   控制面板:  http://127.0.0.1:8889")
     print(f"\n   按 Ctrl+C 停止\n")
 
-    # 启动 Go 代理
-    go_dir = os.path.join(config.SCRIPT_DIR, "proxy_manager")
-    compiled = "--compiled" in sys.argv
-
-    if compiled:
-        exe_path = os.path.join(go_dir, "proxy_manager.exe")
-        if os.path.isfile(exe_path):
-            print(f"   使用预编译: {exe_path}")
-            subprocess.run([exe_path], cwd=go_dir)
-        else:
-            print(f"⚠️ 未找到预编译文件 {exe_path}，回退到 go run")
-            subprocess.run(["go", "run", "."], cwd=go_dir)
+    # 启动 Go 代理（阻塞运行，窗口保持打开以显示日志）
+    if use_compiled:
+        print(f"   使用预编译: {exe_path}")
+        subprocess.run([exe_path], cwd=go_dir)
+    elif compiled:
+        print(f"⚠️ 未找到预编译文件 {exe_path}，回退到 go run")
+        subprocess.run(["go", "run", "."], cwd=go_dir)
     else:
         subprocess.run(["go", "run", "."], cwd=go_dir)
 

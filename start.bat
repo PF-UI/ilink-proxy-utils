@@ -1,18 +1,35 @@
 @echo off
-:: ============================================================================
-:: iLink 代理 — Windows 一键启动（带命令行窗口，便于查看状态）
-:: ============================================================================
-:: 双击 start.bat 即可启动代理，命令行窗口将显示运行日志
-:: 启动后: 代理 127.0.0.1:8888 | 控制面板 http://127.0.0.1:8889
-:: ============================================================================
-
+setlocal EnableExtensions
 cd /d "%~dp0"
+title iLink Proxy
+
+:: Double-click: reopen self with cmd /k so the window NEVER auto-closes
+if /i not "%~1"=="_run" (
+    cmd /k "%~f0" _run
+    exit /b
+)
 
 echo ========================================
-echo    iLink 代理启动中...
+echo    iLink Proxy starting...
+echo ========================================
+echo.
+echo Proxy:  127.0.0.1:8888
+echo Panel:  http://127.0.0.1:8889
+echo Ctrl+C to stop
 echo ========================================
 echo.
 
-python main.py start --compiled
+where python >nul 2>&1
+if errorlevel 1 (
+    echo [ERROR] python not found in PATH
+    goto :end
+)
 
-pause
+python main.py start --compiled
+echo.
+echo [INFO] process exited, code=%ERRORLEVEL%
+
+:end
+echo.
+echo Window stays open. Type exit or close this window.
+echo ========================================
