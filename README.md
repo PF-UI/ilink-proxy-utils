@@ -163,8 +163,10 @@ go build -o proxy_manager.exe .
 ### 方式 B：PAC 脚本（按域名分流，推荐）
 
 1. **Windows**：设置 → 网络和 Internet → 代理 → 使用设置脚本
-2. 脚本地址：`file:///E:/ilink_proxy/proxy.pac`（按实际路径修改）
-3. PAC 规则：国内域名直连，国外域名走 `127.0.0.1:8888`
+2. 脚本地址必须用 `file:///` 形式，例如：`file:///D:/test/proxy.pac`（按实际路径修改，使用正斜杠）
+3. **关闭**「使用代理服务器」，避免与 PAC 冲突
+4. PAC 规则：`directDomains` 直连，`domainsUsingProxy`（含 Google/GitHub 等）走 `127.0.0.1:8888`
+5. 修改 PAC 后需开关一次「使用设置脚本」并重启浏览器才能生效
 
 ---
 

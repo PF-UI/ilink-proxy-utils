@@ -1,7 +1,10 @@
-var cnips = __GEOIP_LIST__;
+// 中国大陆 IPv4 段列表（[基址, 掩码]）。原 __GEOIP_LIST__ 占位符会导致整份 PAC 加载失败。
+// 空数组时依赖 directDomains / domainsUsingProxy 分流；未匹配域名在下方回退为走代理。
+// 若需完整 GeoIP，请用有效 token 调用 API 重新拉取 PAC（见 test.py get_pac）。
+var cnips = [];
 // 指向本地 Go 代理 (127.0.0.1:8888)，由 proxy_manager 负责认证并转发至上游
 var proxy = "PROXY 127.0.0.1:8888; DIRECT";
-var direct = 'DIRECT;';
+var direct = 'DIRECT';
 // 测速域名
 var its_testdomain = {
     "rest.iwests.com": "127.0.0.1:8888",
@@ -215,10 +218,9 @@ function FindProxyForURL(url, host) {
         var strIp = host;
     }
 
-    // 4. 按 IP 判断：无 cnips 时默认直连
-    if (cnips.length < 1) return direct;
+    // 4. 按 IP 判断
     // IPv6 且在中国段 → 直连
-    if (shExpMatch(strIp, "*:*") && ipv6InCidrs(strIp, CN_ipv6_list)) {
+    if (strIp && shExpMatch(strIp, "*:*") && ipv6InCidrs(strIp, CN_ipv6_list)) {
         return direct;
     }
     // DNS 解析失败 → 走代理（避免直连失败）
@@ -228,6 +230,10 @@ function FindProxyForURL(url, host) {
     // 局域网 IP → 直连
     if (isLan(strIp)) {
         return direct;
+    }
+    // 无中国 IPv4 库时：未命中域名列表的流量走代理（保证 Google 等可用）
+    if (cnips.length < 1) {
+        return proxy;
     }
     // 中国 IP（IPv4 cnips / IPv6 CN_ipv6_list）→ 直连
     if (isGeoip(strIp)) {
